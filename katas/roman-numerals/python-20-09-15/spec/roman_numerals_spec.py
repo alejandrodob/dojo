@@ -26,3 +26,10 @@ with describe(Roman):
 
     with it("translates 8 to VIII"):
         expect(Roman.translate(8)).to(equal('VIII'))
+
+    with it("translates 9 to IX"):
+        expect(Roman.translate(9)).to(equal('IX'))
+
+    with it("translates 10 to X"):
+        expect(Roman.translate(10)).to(equal('X'))
+
