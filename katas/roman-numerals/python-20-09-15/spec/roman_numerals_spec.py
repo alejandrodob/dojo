@@ -33,3 +33,29 @@ with describe(Roman):
     with it("translates 10 to X"):
         expect(Roman.translate(10)).to(equal('X'))
 
+    with it("translates 11 to XI"):
+        expect(Roman.translate(11)).to(equal('XI'))
+
+    with it("translates 12 to XII"):
+        expect(Roman.translate(12)).to(equal('XII'))
+
+    with it("translates 13 to XIII"):
+        expect(Roman.translate(13)).to(equal('XIII'))
+
+    with it("translates 14 to XIV"):
+        expect(Roman.translate(14)).to(equal('XIV'))
+
+    with it("translates 15 to XV"):
+        expect(Roman.translate(15)).to(equal('XV'))
+
+    with it("translates 16 to XVI"):
+        expect(Roman.translate(16)).to(equal('XVI'))
+
+    with it("translates 17 to XVII"):
+        expect(Roman.translate(17)).to(equal('XVII'))
+
+    with it("translates 18 to XVIII"):
+        expect(Roman.translate(18)).to(equal('XVIII'))
+
+    with it("translates 19 to XIX"):
+        expect(Roman.translate(19)).to(equal('XIX'))
