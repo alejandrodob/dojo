@@ -32,3 +32,12 @@ with describe(Roman):
 
     with it("translates 10 to X"):
         expect(Roman.translate(10)).to(equal('X'))
+
+    with it("translates 11 to XI"):
+        expect(Roman.translate(11)).to(equal('XI'))
+
+    with it("translates 12 to XII"):
+        expect(Roman.translate(12)).to(equal('XII'))
+
+    with it("translates 13 to XIII"):
+        expect(Roman.translate(13)).to(equal('XIII'))
