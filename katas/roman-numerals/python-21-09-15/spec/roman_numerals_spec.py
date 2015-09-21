@@ -17,3 +17,18 @@ with describe(Roman):
 
     with it("translates 5 to V"):
         expect(Roman.translate(5)).to(equal('V'))
+
+    with it("translates 6 to VI"):
+        expect(Roman.translate(6)).to(equal('VI'))
+
+    with it("translates 7 to VII"):
+        expect(Roman.translate(7)).to(equal('VII'))
+
+    with it("translates 8 to VIII"):
+        expect(Roman.translate(8)).to(equal('VIII'))
+
+    with it("translates 9 to IX"):
+        expect(Roman.translate(9)).to(equal('IX'))
+
+    with it("translates 10 to X"):
+        expect(Roman.translate(10)).to(equal('X'))
