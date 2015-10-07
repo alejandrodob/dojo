@@ -29,10 +29,12 @@ class NINE(object):
 class FOURTY(object):
     symbol = TEN.symbol + FIFTY.symbol
     value = FIFTY.value - TEN.value
+    interval = range(value, value + TEN.value)
 
 class NINETY(object):
     symbol = TEN. symbol + HUNDRED.symbol
     value = HUNDRED.value - TEN.value
+    interval = range(value, value + TEN.value)
 
 
 class Roman(object):
@@ -40,23 +42,33 @@ class Roman(object):
     @staticmethod
     def translate(number):
 
-        if NINETY.value <= number < HUNDRED.value:
-            return NINETY.symbol + Roman.translate(number - NINETY.value)
-        if FOURTY.value <= number < FIFTY.value:
-            return FOURTY.symbol + Roman.translate(number - FOURTY.value)
-        if number == FOUR.value:
-            return FOUR.symbol
-        if number == NINE.value:
-            return NINE.symbol
+        if number <= 3:
+            return ONE.symbol * number
 
+        base = Roman.base_roman_for(number)
+        return base.symbol + Roman.translate(number - base.value)
+
+    @staticmethod
+    def is_special_value(number):
+        return number in [FOUR.value, NINE.value] + FOURTY.interval + NINETY.interval
+
+    @staticmethod
+    def base_roman_for(number):
+
+        if number in NINETY.interval:
+            return NINETY
+        if number in FOURTY.interval:
+            return FOURTY
+        if number == FOUR.value:
+            return FOUR
+        if number == NINE.value:
+            return NINE
 
         if number >= HUNDRED.value:
-            return HUNDRED.symbol + Roman.translate(number - HUNDRED.value)
+            return HUNDRED
         if number >= FIFTY.value:
-            return FIFTY.symbol + Roman.translate(number - FIFTY.value)
+            return FIFTY
         if number >= TEN.value:
-            return TEN.symbol + Roman.translate(number - TEN.value)
+            return TEN
         if number >= FIVE.value:
-            return FIVE.symbol + Roman.translate(number - FIVE.value)
-
-        return ONE.symbol * number
+            return FIVE
